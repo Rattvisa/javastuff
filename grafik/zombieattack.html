@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="http://spelprogrammering.nu/simple.js">
+            function Zombie(startx,starty,speedx)
+                {
+                    this.x =startx;
+                    this.y =starty;
+                    this.speedx =speedx;
+
+                    this.update = function()
+                        {
+                            this.x +=this.speedx;
+                            save();
+                            translate(this.x,this.y);
+                            rectangle(3,110,23,65,"lightgreen");
+                            rectangle(3,95,23,65,"grey");
+                            circle(15,80,20,"lightgreen");
+                            circle(0,80,3,"red");
+                            rectangle(-35,100,30,14,"lightgreen");
+                            rectangle(-20,100,30,14,"grey");
+                            restore();
+                        }
+                }
+            function start()
+                {
+                    zombies = []
+                    for(let i=0;i<100;i++)
+                    {
+                        zombies.push(new Zombie(totalWidth,random(600),((Math.random()+1)-random(7))));
+                    }
+                    
+                }
+            function update()
+                {
+                    clearScreen();
+                    for(let i=0;i<zombies.length;i++)
+                    {
+                        zombies[i].update();
+                    }
+                }
+        </script>
+    </body>
+</html>

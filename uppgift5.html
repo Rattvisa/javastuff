@@ -1,0 +1,72 @@
+<script>
+//nr 1
+/*
+    let startcapital=Number(prompt("vad är startkapitalet"));
+    let nuvarandekapital=(startcapital)
+    for(let i = 0; i<4;i++)
+        {
+            let procenttal=Number(prompt("hur många procent ökade kapitalet detta år?"));
+            procenttal=procenttal/100;
+            nuvarandekapital=nuvarandekapital+nuvarandekapital*procenttal
+        }
+    nuvarandekapital=nuvarandekapital.toFixed(2)
+    alert(nuvarandekapital);
+*/
+//nr 2
+/*
+function laddasidor()
+    {
+        let sidmat=(Number(prompt("vad är sidlängden i cm?")));
+        return(sidmat)
+    }
+function boxvolym(sidor)
+    {
+        let volymmath=(sidor**3);
+        return(volymmath);
+    }
+function skrivut(volym)
+    {
+        alert("din box har volymen av " + volym +" kubikcentimenter");
+    }
+do
+{
+    let sidor=(laddasidor())
+    let volym=boxvolym(sidor)
+    skrivut(volym)
+}while(confirm("vill du beräkna en annan box?"))
+*/
+//nr 3
+/*
+let korgvarde;
+let sale;
+let korgvardeaftersale;
+do
+    {
+        korgvarde=(Number(prompt("vad är värdet av din korg?")));   
+        if(korgvarde<500)
+            {
+                sale=0;
+                korgvardeaftersale=korgvarde;
+            }
+        else if(korgvarde<1000)
+            {
+                sale=5;
+                korgvardeaftersale=korgvarde-(korgvarde*(sale/100));
+            }
+        else if(korgvarde<5000)
+            {
+                sale=10;
+                korgvardeaftersale=korgvarde-(korgvarde*(sale/100));
+            }
+        else
+            {
+                sale=20
+                korgvardeaftersale=korgvarde-(korgvarde*(sale/100));
+            }
+        alert("din korg hade värdet av " + korgvarde + "€, med en rabatt av " + sale + "% kostar nu din korg " + korgvardeaftersale + "€")
+    }
+while(confirm("har du en annan korg?"))
+*/
+//nr 4
+//see 4.4.js
+</script>

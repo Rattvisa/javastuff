@@ -1,0 +1,114 @@
+<script>
+//nr 1
+/*
+let svar;
+do
+{
+    svar=prompt("WHERE ARE YOU?")
+    if(svar.toUpperCase()=="ÅLAND")
+    {
+        alert("correct")
+    }
+    else
+    {
+        alert("you got it wrong and you should feel bad!")
+    }
+}while(svar.toUpperCase()!="ÅLAND")
+*/
+// nr.2
+/*
+let meny_svar;
+do
+{
+    svar=prompt("Vill du äta 1.Pizza 2.Hamburgare 3.Varma mackor 4.Kanelbulle 0.Mätt");
+    if(svar==1)
+    {
+        alert("du har valt: PIZZA");
+    }
+    else if(svar==2)
+    {
+        alert("du har valt: HAMBURGARE");
+    }
+    else if(svar==3)
+    {
+        alert("du har valt: VARMA MACKOR");
+    }
+    else if(svar==4)
+    {
+        alert("du har valt: KANELBULLE");
+    }
+    else if(svar==00)
+    {
+        alert("tack");
+        break
+    }
+    else
+    {
+        alert("ogiltigt val, skriv nummer");
+    }
+}while(meny_svar!=0);
+*/
+//nr 3
+/*
+function to_pounds(kilo)
+{
+    let pound=(2.205*kilo);
+    alert(kilo + "kg är " + pound + "lb");
+}
+
+kilo=prompt("hur många kilo vill du göra till pounds?")
+to_pounds(kilo)
+*/
+//nr 4
+/*
+function random_int(min, max)
+    {
+        let randomanswer=(Math.floor(Math.random()*(max-min))+(min));
+        alert(randomanswer + " är ett tal mellan " + min + " och " + max);
+    }
+let tal1=Number(prompt("välj ett tal"));
+let tal2=Number(prompt("välj ett annat tal"));
+if(tal1<tal2)
+    {
+        let min=tal1;
+        let max=tal2;
+    }
+else if(tal1>tal2)
+    {
+        let min=tal2;
+        let max=tal1;
+    }
+else
+    {
+        let min=tal1;
+        let max=tal2;
+    }
+random_int(tal1, tal2)
+*/
+//nr 5
+function random_int(min, max)
+    {
+        let randomanswer=(Math.floor(Math.random()*(max-min))+(min));
+        alert(randomanswer + " är ett tal mellan " + min + " och " + max);
+    }
+do{
+let tal1=Number(prompt("välj ett tal"));
+let tal2=Number(prompt("välj ett annat tal"));
+if(tal1<tal2)
+    {
+        let min=tal1;
+        let max=tal2;
+    }
+else if(tal1>tal2)
+    {
+        let min=tal2;
+        let max=tal1;
+    }
+else
+    {
+        let min=tal1;
+        let max=tal2;
+    }
+random_int(tal1, tal2)
+}while(confirm("vill du köra igen"))
+</script>

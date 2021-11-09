@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="http://spelprogrammering.nu/simple.js">
+            function Spider(startx,starty,speedx, speedy)
+                {
+                    //kollar ifall vi har en spindel som är EXTREMT långsam
+                    if(speedx<1&&speedy<1)
+                        {
+                            //"singlar slatt" om ifall x eller y hastigheten ska ändras
+                            xory=random(2)
+                            if(xory==1)
+                                {
+                                    //ökar x hastigheten med en så att det inte tar en evighet att komma till kanten
+                                    speedx=1
+                                }
+                            else
+                                {
+                                    //ökar y hastigheten med en så att det inte tar en evighet att komma till kanten
+                                    speedy=1
+                                }
+                        }
+                    this.x =startx;
+                    this.y =starty;
+                    //rad 32 till rad 49 slumpar fram ifall x och/eller y hastigheten är positiv eller negativ 
+                    let plusorminus=random(2)
+                    if(plusorminus==1)
+                        {
+                            this.speedx=speedx-(speedx*2)
+                        }
+                    else
+                        {
+                            this.speedx=speedx
+                        }
+                    plusorminus=random(2)
+                    if(plusorminus==1)
+                        {
+                            this.speedy=speedy-(speedy*2)
+                        }
+                    else
+                        {
+                            this.speedy=speedy
+                        }
+                    //bygger upp vår "spindel"
+                    this.update = function()
+                        {
+                            //dessa två rader gör att spindel flyttar på sig
+                            this.x +=this.speedx;
+                            this.y +=this.speedy;
+                            save();
+                            translate(this.x,this.y);
+                            //följande 8 rader, bygger 4 ben, 8 ben var möjliga men det skulle vara för plotrigt
+                            rectangle(15,0,40,5,"black")
+                            rectangle(-20,0,-40,5,"black")
+                            rectangle(0,-10,40,5,"black")
+                            rectangle(-20,-10,-25,5,"black")
+                            rectangle(50,0,5,40,"black")
+                            rectangle(-60,0,5,40,"black")
+                            rectangle(35,-10,5,50,"black")
+                            rectangle(-45,-10,5,50,"black")
+                            // dessa 6 rader bygger upp ett huvud/kropp med 4 ögon och en mun
+                            circle(0,0,20,"grey");
+                            circle(-10,-7,3,"red");
+                            circle(-11,-1,3,"red");
+                            circle(10,-7,3,"red");
+                            circle(11,-1,3,"red");
+                            circle(0,10,3,"black");
+                            restore();
+                        }
+                }
+            function start()
+                {
+                    //en variabel som används sedare till att delaya utpopande av spindlar
+                    upcount=0
+                    //en array som spindlar kommer bli inkuffade in i senare
+                    spiders = []
+                    rectangle(0,0,totalWidth,totalHeight,"green")
+                }
+            function update()
+                {
+                    //clearscreen gör så att det inte blir modern art av spindlar som inte tas bort och blir linjer av eldrich horror
+                    clearScreen()
+                    //gör gräss
+                    rectangle(0,0,totalWidth,totalHeight,"green")
+                    //ökar delayvarabel
+                    upcount++;
+                    //varje gång delayvariabeln är delbar på 100 så blir en spindel inkuffad
+                    if (upcount%100==0)
+                        {
+                            spiders.push(new Spider((totalWidth/2),(totalHeight/2), (random(5)+Math.random()),(random(5)+Math.random())));
+                        }
+                    //ritar spindlar så länge dom är inom ett givet område
+                    for(let i=0;i<spiders.length;i++)
+                        {
+                            if(getPixel(spiders[i].x,spiders[i].y).green != 0)
+                                {
+                                    spiders[i].update()
+                                }
+                        }
+                }
+        </script>
+    </body>
+</html>

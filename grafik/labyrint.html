@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://spelprogrammering.nu/simple.js">
+        //ritar lava
+        rectangle(200,0,5000,5000,"red");
+        //ritar första biten av den gröna vägen
+        rectangle(200,150,250,100,"green");
+        //ritar den andra biten av den gröna vägen
+        rectangle(400,150,100,300,"green");
+        //ritar den sista biten av den gröna vägen
+        rectangle(400,450,250,250,"green");
+        //ritar målet
+        rectangle(600,450,250,250,"blue");
+        //ritar ritar startlobbyn
+        rectangle(0,0,200,5000,"blue");
+        //en text som visar var man ska starta
+        text(25,300,36,"start","white")
+        function update()
+            {
+                //kollar ifall musen inte är på blå
+                if(getPixel(mouse.x, mouse.y).blue == 0)
+                    {
+                        //ifall den inte är på blå så göms musen om inget annat säger det
+                        hideMouse()
+                    }
+                else
+                    {
+                        //visar musen ifall den är på blå
+                        showMouse()
+                    }
+                //kollar ifall musen är på en röd pixel efter den har lämnat start
+                if(getPixel(mouse.x, mouse.y).red != 0 && mouse.x>200)
+                    {
+                        //skickar ut ett citat från charlie and the choclate factory, som berättar att man har förlorat
+                        alert("you get NOTHING! YOU LOSE! GOOD DAY SIR!")
+                        //slutar uppdatera
+                        stopUpdate()
+                    }
+                //kollar ifall man 
+                if(getPixel(mouse.x, mouse.y).blue != 0 && mouse.x>300)
+                    {
+                        //meddelar att du har vunnit, och ställer dig en fråga du får tänka på själv: var de värt det?
+                        alert("you won, but at what cost?")
+                        //slutar uppdatera
+                        stopUpdate()
+                    }
+            }
+    </script>
+</body>
+</html>

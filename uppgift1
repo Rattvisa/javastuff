@@ -1,0 +1,29 @@
+/*nr 1
+en variabel måste följa detta enligt dummies.com
+får inte ha mellanslag
+får inte börja med ett nummer eller specialtecken, undantag för dollartecken och underscore
+får bara innehåla nummber, bokstäver, dollartecken eller underscore
+finns vissa ord som inte får bli variabler som till exempel samma ord som används för funktioner i javascript
+rekommenderas att ett variabel namn inte är en kombimatiom av tecken huller om buller, det blir enklare ifall det står t.ex number_of_letters än dgad66425dfa
+första bokstaven ska va liten
+*/
+
+//nr 2
+let FirstName=("Dan");
+let LastName=("söderlund");
+let age=("18");
+
+console.log("jag är "+ FirstName +" "+ LastName + " och jag är "+ age);
+
+//nr 3
+
+let the_antichrist=(6+6**6-0);
+let stuff=(755/10*2%5);
+let summa=(the_antichrist+stuff)
+console.log(summa);
+
+//nr 4
+console.log(typeof("Bob"));
+console.log(typeof(8));
+console.log(typeof(true));
+console.log(typeof(null));
